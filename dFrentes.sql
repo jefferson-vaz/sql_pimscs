@@ -1,10 +1,12 @@
+/* Objetivo: Quando executado, retorna uma Tabela de Resumo das Frentes de Colheita das Últimas 4 Safras do Histórico de Produção, Apt_Cargas e Perdas de Colheita Mecânica  */
+
 select--dFrentes
     distinct
     "No. Frente",
     "Frente",
     "Frente Colheita"
 from (
-    select--dFrentes Hist�rico de Producao
+    select--dFrentes Histórico de Producao
         distinct
         to_number(a.cd_fren_tran) as "No. Frente",
         case
