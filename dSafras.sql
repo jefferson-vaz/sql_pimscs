@@ -1,3 +1,5 @@
+/* Objetivo: Quando executada esta instrução, retorna uma Tabela de Resumo de Safra, das Últimas 4 Safras do Histórico de Produção  */
+
 select--dSafra
     a.cd_safra as "No.Safra",
     'Safra ' || a.cd_safra as "Safra",
