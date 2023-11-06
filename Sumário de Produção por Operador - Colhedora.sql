@@ -1,4 +1,4 @@
-/* Objetivo: Quando executada esta instrução, Retorna Tabela com informações do Operador Inserido no Filtro... (Aqui está pegando de uma tabela de Back_up do Apt_Cargas) */
+/* Objetivo: Quando executada esta instruÃ§Ã£o, Retorna Tabela com informaÃ§Ãµes do Operador Inserido no Filtro... (Aqui estÃ¡ pegando de uma tabela de Back_up do Apt_Cargas) */
 
 select--Safra 2022
     b.cd_safra as "Safra",
