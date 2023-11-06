@@ -1,4 +1,4 @@
-/* Objetivo: Quando executada esta instrução, retorna uma Tabela de Resumo das Frentes de Colheita das Últimas 4 Safras do Histórico de Produção, Apt_Cargas e Perdas de Colheita Mecânica  */
+/* Objetivo: Quando executada esta instrução, retorna uma Tabela de Resumo das Frentes de Colheita das Últimas 4 Safras do Histórico de Produção, Apt_Cargas e Perdas de Colheita Mecânica - Virada Safra Automatica */
 
 select--dFrentes
     distinct
