@@ -119,7 +119,7 @@ corte_atual as (
                                 a.cd_upnivel1 = a2.cd_upnivel1
                             and a.cd_upnivel2 = a2.cd_upnivel2
                             and a.cd_upnivel3 = a2.cd_upnivel3
-                            and a2.cd_safra = (select max(cd_safra) from histprepro where cd_hist = 'O')
+                            and a2.cd_safra = (select max(cd_safra) from histprepro where cd_hist not in ('E','S'))
                             and a2.fg_ocorren = 'Q'
                         )
     union
@@ -147,7 +147,7 @@ corte_atual as (
 
 select
     a.layer as "Layer",
---    a.cd_safra as "Safra",
+    (select max(cd_safra) from histprepro where cd_hist not in ('E','S')) as "Safra",
     a.cd_upnivel1 as "Mapa",
     a.cd_upnivel2 as "Gleba",
     a.cd_upnivel3 as "Quadra",
