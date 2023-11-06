@@ -1,4 +1,4 @@
-/* Objetivo: Quando executada esta instrução, retorna uma Tabela de Resumo de Safra, das Últimas 4 Safras do Histórico de Produção  */
+/* Objetivo: Quando executada esta instrução, retorna uma Tabela de Resumo de Safra, das Últimas 4 Safras do Histórico de Produção - Virada Safra Automatica  */
 
 select--dSafra
     a.cd_safra as "No.Safra",
