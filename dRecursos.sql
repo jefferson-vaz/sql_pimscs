@@ -1,10 +1,11 @@
-/* Objetivo: Quando executada esta instrução, retorna uma Tabela com Recursos por Local de Produção , nas ultimas três Safras + Safra Atual */
+/* Objetivo: Quando executada esta instruÃ§Ã£o, retorna uma Tabela com Recursos por Local de ProduÃ§Ã£o , nas ultimas trÃªs Safras + Safra Atual */
 
 select--dRecursos--Safra 2023
     distinct
     to_number(trim(b.cd_upnivel1)||trim(b.cd_upnivel2)||case when to_number(trim(b.cd_upnivel3)) < 10 then '0'||trim(b.cd_upnivel3) else trim(b.cd_upnivel3) end) as "Layer",
     b.cd_safra as "Safra",
     a.no_liberacao as "No. Liberacao",
+    b.no_queima as "No. Ordem Corte",
     case
         when a.cd_tp_recurso = 'TT' then 'Trator Transbordo'
         when a.cd_tp_recurso = 'CD' then 'Colhedora'
@@ -79,6 +80,7 @@ select--dRecursos--Safra 2022
     to_number(trim(b.cd_upnivel1)||trim(b.cd_upnivel2)||case when to_number(trim(b.cd_upnivel3)) < 10 then '0'||trim(b.cd_upnivel3) else trim(b.cd_upnivel3) end) as "Layer",
     b.cd_safra as "Safra",
     a.no_liberacao as "No. Liberacao",
+    b.no_queima as "No. Ordem Corte",
     case
         when a.cd_tp_recurso = 'TT' then 'Trator Transbordo'
         when a.cd_tp_recurso = 'CD' then 'Colhedora'
@@ -150,6 +152,7 @@ select--dRecursos--Safra 2021
     to_number(trim(b.cd_upnivel1)||trim(b.cd_upnivel2)||case when to_number(trim(b.cd_upnivel3)) < 10 then '0'||trim(b.cd_upnivel3) else trim(b.cd_upnivel3) end) as "Layer",
     b.cd_safra as "Safra",
     a.no_liberacao as "No. Liberacao",
+    b.no_queima as "No. Ordem Corte",
     case
         when a.cd_tp_recurso = 'TT' then 'Trator Transbordo'
         when a.cd_tp_recurso = 'CD' then 'Colhedora'
@@ -221,6 +224,7 @@ select--dRecursos--Safra 2020
     to_number(trim(b.cd_upnivel1)||trim(b.cd_upnivel2)||case when to_number(trim(b.cd_upnivel3)) < 10 then '0'||trim(b.cd_upnivel3) else trim(b.cd_upnivel3) end) as "Layer",
     b.cd_safra as "Safra",
     a.no_liberacao as "No. Liberacao",
+    b.no_queima as "No. Ordem Corte",
     case
         when a.cd_tp_recurso = 'TT' then 'Trator Transbordo'
         when a.cd_tp_recurso = 'CD' then 'Colhedora'
