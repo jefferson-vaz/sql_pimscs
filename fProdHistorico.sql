@@ -1,13 +1,12 @@
-/* Objetivo: Quando executada esta instrução, retorna uma Tabela com Produção do Histórico da Entrada de Cana das Ultimas 3 Safras + Safra Atual - Virada Safra Automatica  */
+/* Objetivo: Quando executada esta instruÃ§Ã£o, retorna uma Tabela com ProduÃ§Ã£o do HistÃ³rico da Entrada de Cana das Ultimas 3 Safras + Safra Atual - Virada Safra Automatica  */
 
-select--Histórico de Entrada de Cana
+select--HistÃ³rico de Entrada de Cana
     to_number(trim(a.cd_upnivel1)||trim(a.cd_upnivel2)||case when to_number(trim(a.cd_upnivel3)) < 10 then '0'||trim(a.cd_upnivel3) else trim(a.cd_upnivel3) end) as "Layer",
     a.cd_safra as "Safra",
     a.cd_upnivel1 as "Mapa",
     a.cd_upnivel2 as "Gleba",
     a.cd_upnivel3 as "Quadra",
     a.dt_historico as "Data",
-    e."No. Corte" as "No. Corte",
     a.cd_fren_tran as "Frente",
     sum(a.qt_cana_ent/1000) as "Toneladas de Cana",    
     sum((a.qt_idade/30.2) * (a.qt_cana_ent/1000)) as "ponderar_idade",
@@ -35,7 +34,7 @@ inner join
         c.fg_maturac = d.fg_maturac
 left join
         (
-        select--Cadastro de Estágios Interpretado
+        select--Cadastro de EstÃ¡gios Interpretado
             a.*,
             decode(
                 "Estagio",
@@ -43,11 +42,11 @@ left join
                 'Ano','12M',
                 'Ano e meio', '18M',
                 'Ano e Meio', '18M',        
-                '2º Corte','2C',
-                '3º Corte','3C',        
-                '4º Corte','4C',        
-                '5º Corte','5C',        
-                '>5º Corte','5C+',        
+                '2Âº Corte','2C',
+                '3Âº Corte','3C',        
+                '4Âº Corte','4C',        
+                '5Âº Corte','5C',        
+                '>5Âº Corte','5C+',        
                 'Pousio','Pous',
                 'Expansao','Exp',
                 'Reforma','Ref',
@@ -115,5 +114,4 @@ group by
     a.cd_upnivel2, 
     a.cd_upnivel3, 
     a.dt_historico, 
-    e."No. Corte", 
     a.cd_fren_tran
