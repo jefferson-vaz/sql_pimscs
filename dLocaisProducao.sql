@@ -1,4 +1,4 @@
-/* Objetivo: Quando executada esta instrução, retorna uma Tabela de Resumo das Frentes de Colheita das Últimas 4 Safras do Histórico de Produção, Apt_Cargas e Perdas de Colheita Mecânica - Virada Safra Automatica  */
+/* Objetivo: Quando executada esta instruÃ§Ã£o, retorna uma Tabela de Resumo das Frentes de Colheita das Ãšltimas 4 Safras do HistÃ³rico de ProduÃ§Ã£o, Apt_Cargas e Perdas de Colheita MecÃ¢nica - Virada Safra Automatica  */
 
 select--dLocaisProducao
     distinct
@@ -66,7 +66,7 @@ left join
         a.cd_upnivel2 as "Gleba",
         a.cd_upnivel3 as "Quadra",
         a.data_fech as "Data de Fechamento",
-        b.data as "Data do Último Corte",
+        b.data as "Data do Ãšltimo Corte",
         c.data as "Data do Corte Atual",
         case 
             when b.data is null then 0
@@ -230,7 +230,7 @@ left join
         a.cd_upnivel2 as "Gleba",
         a.cd_upnivel3 as "Quadra",
         a.data_fech as "Data de Fechamento",
-        b.data as "Data do Último Corte",
+        b.data as "Data do Ãšltimo Corte",
         c.data as "Data do Corte Atual",
         case 
             when b.data is null then 0
@@ -394,7 +394,7 @@ left join
         a.cd_upnivel2 as "Gleba",
         a.cd_upnivel3 as "Quadra",
         a.data_fech as "Data de Fechamento",
-        b.data as "Data do Último Corte",
+        b.data as "Data do Ãšltimo Corte",
         c.data as "Data do Corte Atual",
         case 
             when b.data is null then 0
@@ -558,7 +558,7 @@ left join
         a.cd_upnivel2 as "Gleba",
         a.cd_upnivel3 as "Quadra",
         a.data_fech as "Data de Fechamento",
-        b.data as "Data do Último Corte",
+        b.data as "Data do Ãšltimo Corte",
         c.data as "Data do Corte Atual",
         case 
             when b.data is null then 0
@@ -725,4 +725,4 @@ where
             from
                 pimscs.histproduc
     )
-order by 1
+--order by 1
