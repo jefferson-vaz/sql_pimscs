@@ -1,4 +1,4 @@
-
+/* Objetivo: Quando executada esta instrução, retorna uma Tabela com a Idade em Meses por Local de Produção do Cadastro - Vira Safra automaticamente com sistema - Ultimas 3 Safras + Safra atual Corrente */
 
 select--Idades da Safra Atual
     a.layer as "Layer",
@@ -7,7 +7,7 @@ select--Idades da Safra Atual
     a.cd_upnivel2 as "Gleba",
     a.cd_upnivel3 as "Quadra",
     a.data_fech as "Data de Fechamento",
-    b.data as "Data do �ltimo Corte",
+    b.data as "Data do Último Corte",
     c.data as "Data do Corte Atual",
     case 
         when b.data is null then 0
@@ -171,7 +171,7 @@ select--Idades da Safra Atual-1
     a.cd_upnivel2 as "Gleba",
     a.cd_upnivel3 as "Quadra",
     a.data_fech as "Data de Fechamento",
-    b.data as "Data do �ltimo Corte",
+    b.data as "Data do Último Corte",
     c.data as "Data do Corte Atual",
     case 
         when b.data is null then 0
@@ -335,7 +335,7 @@ select--Idades da Safra Atual-2
     a.cd_upnivel2 as "Gleba",
     a.cd_upnivel3 as "Quadra",
     a.data_fech as "Data de Fechamento",
-    b.data as "Data do �ltimo Corte",
+    b.data as "Data do Último Corte",
     c.data as "Data do Corte Atual",
     case 
         when b.data is null then 0
@@ -499,7 +499,7 @@ select--Idades da Safra Atual-3
     a.cd_upnivel2 as "Gleba",
     a.cd_upnivel3 as "Quadra",
     a.data_fech as "Data de Fechamento",
-    b.data as "Data do �ltimo Corte",
+    b.data as "Data do Último Corte",
     c.data as "Data do Corte Atual",
     case 
         when b.data is null then 0
