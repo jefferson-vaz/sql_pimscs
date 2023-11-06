@@ -1,3 +1,5 @@
+/* Objetivo: Quando executada esta instrução, retorna uma Tabela com a Idade em Meses por Local de Produção do Cadastro - Vira Safra automaticamente com sistema - Safra Corrente  */
+
 with
 cadastro as(
     select--Cadastro
@@ -150,7 +152,7 @@ select
     a.cd_upnivel2 as "Gleba",
     a.cd_upnivel3 as "Quadra",
     a.data_fech as "Data de Fechamento",
-    b.data as "Data do �ltimo Corte",
+    b.data as "Data do Último Corte",
     c.data as "Data do Corte Atual",
     case 
         when b.data is null then 0
