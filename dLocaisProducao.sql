@@ -3,6 +3,7 @@
 select--dLocaisProducao
     distinct
     to_number(trim(a.cd_upnivel1)||trim(a.cd_upnivel2)||case when to_number(trim(a.cd_upnivel3)) < 10 then '0'||trim(a.cd_upnivel3) else trim(a.cd_upnivel3) end) as "Layer",
+    a.cd_safra as "Safra",
     a.cd_upnivel1 as "Mapa",
     a.cd_upnivel2 as "Gleba",
     a.cd_upnivel3 as "Quadra",
