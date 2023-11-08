@@ -1,4 +1,4 @@
-/* Objetivo: Quando executada esta instruÁ„o, retorna uma Tabela com ¡reas, Toneladas e TCH Encerrados das Ultimas 3 Safras + Safra Atual - Necess·rio Acrescentrar as novas safras - Tabelas de back-up */
+/* Objetivo: Quando executada esta instru√ß√£o, retorna uma Tabela com √Åreas, Toneladas e TCH Encerrados das Ultimas 3 Safras + Safra Atual - Necess√°rio Acrescentrar as novas safras - Tabelas de back-up */
 
 select--fTch
     to_number(trim(a.cd_upnivel1)||trim(a.cd_upnivel2)||case when to_number(trim(a.cd_upnivel3)) < 10 then '0'||trim(a.cd_upnivel3) else trim(a.cd_upnivel3) end) as "Layer",
@@ -9,8 +9,7 @@ select--fTch
     b.dt_ocorren as "Data Fech. Local Prod.",
     sum(a.qt_cana_ent/1000) as "Ton. Cana",
     (sum(a.qt_cana_ent/1000) / d."Ton. Cana Total") as "percent_tc_quadra",
-    round((round(c."Area",2) * (sum(a.qt_cana_ent/1000) / d."Ton. Cana Total")),2) as "Area (ha)",
-    round((sum(a.qt_cana_ent/1000) / round((round(c."Area",2) * (sum(a.qt_cana_ent/1000) / d."Ton. Cana Total")),2)),2) as "Tch"
+    round((round(c."Area",2) * (sum(a.qt_cana_ent/1000) / d."Ton. Cana Total")),2) as "Area (ha)"
 from    
     pimscs.histproduc a
 inner join
