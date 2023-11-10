@@ -1,6 +1,6 @@
-/* Objetivo: Quando executada esta instrução, retorna uma Tabela com as Perdas de Colheita Mecânica da Entrada de Cana das Ultimas 3 Safras + Safra Atual - Virada Safra Automatica  */
+/* Objetivo: Quando executada esta instruÃ§Ã£o, retorna uma Tabela com as Perdas de Colheita MecÃ¢nica da Entrada de Cana das Ultimas 3 Safras + Safra Atual - Virada Safra Automatica  */
 
-select--Perdas de Colheita Mecânica
+select--Perdas de Colheita MecÃ¢nica
     trim(d.cd_upnivel1)||trim(d.cd_upnivel2)||case when to_number(trim(d.cd_upnivel3)) < 10 then '0'||trim(d.cd_upnivel3) else trim(d.cd_upnivel3) end as "Layer",
     d.no_boletim as "Boletim",
     d.cd_safra as "Safra",
@@ -8,7 +8,7 @@ select--Perdas de Colheita Mecânica
     d.cd_upnivel2 as "Gleba",
     d.cd_upnivel3 as "Quadra",
     h.cd_fren_tran as "Frente",
-    substr(d.cd_recurso,3,6) as "Equipto",
+    substr(d.cd_recurso,3,6) as "Colhedora",
     h.dt_operacao as "Data",
     case 
         when h.cd_turno in (0,4) then '1'
@@ -58,7 +58,7 @@ left join
 left join
     (
     (
-            select--Cadastro de Estágios Interpretado
+            select--Cadastro de EstÃ¡gios Interpretado
                 a.*,
                 decode(
                     "Estagio",
@@ -66,11 +66,11 @@ left join
                     'Ano','12M',
                     'Ano e meio', '18M',
                     'Ano e Meio', '18M',        
-                    '2º Corte','2C',
-                    '3º Corte','3C',        
-                    '4º Corte','4C',        
-                    '5º Corte','5C',        
-                    '>5º Corte','5C+',        
+                    '2Âº Corte','2C',
+                    '3Âº Corte','3C',        
+                    '4Âº Corte','4C',        
+                    '5Âº Corte','5C',        
+                    '>5Âº Corte','5C+',        
                     'Pousio','Pous',
                     'Expansao','Exp',
                     'Reforma','Ref',
